@@ -36,6 +36,7 @@ namespace UsersServiceNSP
             return "Database and container created successfully. Thank you!";
         }
 
+        // Add A new item to cosmosDB
         public string AddUser(UsersModel user)
         {
             throw new NotImplementedException();
