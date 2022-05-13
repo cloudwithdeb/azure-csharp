@@ -2,23 +2,23 @@ using Microsoft.AspNetCore.Mvc;
 using UsersInterfaceNSP;
 using UsersModelNSP;
 
-namespace AddUsersNSP
+namespace AddMultipleUsersNSP
 {
     [ApiController]
     [Route("[controller]")]
-    public class AddUser : ControllerBase
+    public class AddMultipleUsers : ControllerBase
     {
         private readonly IUsersMthodsInterface _svc;
         
-        public AddUser(IUsersMthodsInterface svc)
+        public AddMultipleUsers(IUsersMthodsInterface svc)
         {
             _svc = svc;
         }
-
+        
         [HttpPost]
-        public ActionResult AddUsers(UsersModel user)
+        public ActionResult AddMultipleUser(UsersModel[] users)
         {
-            var results = _svc.AddUser(user);
+            var results = _svc.AddMultitpleUsers(users);
             return Ok(results);
         }
     }

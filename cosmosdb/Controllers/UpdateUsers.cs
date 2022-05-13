@@ -2,23 +2,23 @@ using Microsoft.AspNetCore.Mvc;
 using UsersInterfaceNSP;
 using UsersModelNSP;
 
-namespace AddUsersNSP
+namespace UpdateUsersNSP
 {
     [ApiController]
     [Route("[controller]")]
-    public class AddUser : ControllerBase
+    public class UpdateUsers : ControllerBase
     {
         private readonly IUsersMthodsInterface _svc;
-        
-        public AddUser(IUsersMthodsInterface svc)
+
+        public UpdateUsers(IUsersMthodsInterface svc)
         {
             _svc = svc;
         }
 
-        [HttpPost]
-        public ActionResult AddUsers(UsersModel user)
+        [HttpPut]
+        public ActionResult updateUsers(UsersModel users, string id)
         {
-            var results = _svc.AddUser(user);
+            var results = _svc.UpdateUsers(id, users);
             return Ok(results);
         }
     }

@@ -1,24 +1,23 @@
 using Microsoft.AspNetCore.Mvc;
 using UsersInterfaceNSP;
-using UsersModelNSP;
 
-namespace AddUsersNSP
+namespace GetALlUsersNSP
 {
     [ApiController]
     [Route("[controller]")]
-    public class AddUser : ControllerBase
+    public class GetAllUsers : ControllerBase
     {
         private readonly IUsersMthodsInterface _svc;
-        
-        public AddUser(IUsersMthodsInterface svc)
+
+        public GetAllUsers(IUsersMthodsInterface svc)
         {
             _svc = svc;
         }
 
-        [HttpPost]
-        public ActionResult AddUsers(UsersModel user)
+        [HttpGet]
+        public ActionResult GetAllUser()
         {
-            var results = _svc.AddUser(user);
+            var results = _svc.GetAllUsers();
             return Ok(results);
         }
     }

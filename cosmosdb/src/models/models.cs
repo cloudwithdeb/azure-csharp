@@ -1,15 +1,28 @@
 using System.ComponentModel.DataAnnotations;
+using Newtonsoft.Json;
 using UsersInterfaceNSP;
 
 namespace UsersModelNSP
 {
-    public class UsersModel : IUsersModelInterface
+    public class Details
     {
-        public int Id { get; set; }
+        public string? email {get; set;}
+        public string? location {get; set;}
+        public int? age {get; set;}
+    }
+    public class Others
+    {
+        public string? mom {get; set;}
+        public string? dad {get; set;}
+    }
+    public class UsersModel
+    {
+        [JsonProperty("id")]
+        public string? Id {get; set;}
+        public int usersid { get; set; }
         public string? username  { get; set; }
-        public double? amount  { get; set; }
-        public string? email { get; set; }
-        public string? password  { get; set; }
+        public Details? details {get; set;}
+        public List<Others>? others {get; set;}
     }
 
     //Database and collection model
