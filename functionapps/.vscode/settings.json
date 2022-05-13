@@ -1,0 +1,18 @@
+{
+    "rest-client.environmentVariables": {
+        "Local": {
+            "url": "http://localhost:7071/api"
+        },
+        "Azure": {
+            "url": " https://linuxtesterscsharp.azurewebsites.net/api"
+        },
+        "$shared": {
+            "url": "http://localhost:7071/api/demoapp"
+        }
+    },
+    "azureFunctions.deploySubpath": "bin/Release/net6.0/publish",
+    "azureFunctions.projectLanguage": "C#",
+    "azureFunctions.projectRuntime": "~4",
+    "debug.internalConsoleOptions": "neverOpen",
+    "azureFunctions.preDeployTask": "publish (functions)"
+}

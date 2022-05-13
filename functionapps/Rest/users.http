@@ -1,0 +1,13 @@
+# @name get_all_users
+GET https://linuxtesterscsharp.azurewebsites.net/api/GetAllUsers?code=3YL7rZbv4ucVsBNE0N_xgFiflyQit1CbKOO7iGi61KIvAzFubPwG3Q==
+
+# @name add_users
+POST {{url}}/AddUsers
+Content-Type: application/json
+
+{
+    "username": "Mirabel",
+    "amount": 15.30,
+    "email": "nkrumah@gmail.com",
+    "loc": "United Kingdom"
+}
